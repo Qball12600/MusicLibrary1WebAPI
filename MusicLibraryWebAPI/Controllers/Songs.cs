@@ -1,55 +1,69 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MusicLibraryWebAPI.Data;
+using MusicLibraryWebAPI.Models;
+using MySqlX.XDevAPI.CRUD;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-public class MusicLibraryWebAPIController : Controller
-{
-    private readonly ApplicationDbContext _context;
-    public MusicLibraryWebAPIController(ApplicationDbContext context)
-    {
-        _context = context;
-    }
-}
-
 namespace MusicLibraryWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Songs : ControllerBase
+    public class SongsController : ControllerBase
     {
+        //public class MusicLibraryWebAPIController : Controller
+        //{
+            private readonly ApplicationDbContext _context;
+             public SongsController(ApplicationDbContext context)
+             {
+                 _context = context;
+             }
+
+
+
+        //private readonly object _context;
+
+        //private object _context;
+
+        //public object Title { get; private set; }
+        //public object Artist { get; private set; }
+        //public object Album { get; private set; }
+        //public object ReleaseDate { get; private set; }
+        //public object Genre { get; private set; }
+
+
         // GET: api/<Songs>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetAllSongs()
         {
             var songs = _context.Songs.ToList();
-            return songs.Select(songs => $"{ songs.Title} by {songs.Artist}");
+            return Ok(songs);
         }
 
         // GET api/<Songs>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult GetSongsById(int id)
         {
             var song = _context.Songs.Find(id);
             if (song == null)
             {
                 return NotFound();
             }
-            return "value";
+            return Ok(song);
         }
 
         // POST api/<Songs>
         [HttpPost]
-        public void Post([FromBody] Songs newSong)
+        public IActionResult CreateSong([FromBody] Song newSong)
         {
             _context.Songs.Add(newSong);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(Get), new { id = newSong.Id }, newSong);
+            return CreatedAtAction(nameof(GetSongsById), new { id = newSong.Id }, newSong);
         }
 
         // PUT api/<Songs>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Songs updatedSong)
+        public IActionResult UpdateSong(int id, [FromBody] Song updatedSong)
         {
             var song = _context.Songs.Find(id);
             if (song == null)
@@ -62,14 +76,22 @@ namespace MusicLibraryWebAPI.Controllers
             song.ReleaseDate = updatedSong.ReleaseDate;
             song.Genre = updatedSong.Genre;
 
-            _context.SvaeChanges();
+            _context.SaveChanges();
             return Ok(song);
         }
 
         // DELETE api/<Songs>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult DeleteSong(int id)
         {
+            var song = _context.Songs.Find(id);
+            if (song == null)
+            {
+                return NotFound();
+            }
+            _context.Songs.Remove(song);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }

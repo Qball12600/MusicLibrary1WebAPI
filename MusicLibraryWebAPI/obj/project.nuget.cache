@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E2fudSh9YNWU5u1N465n2jc/BApu9IK2sbvsSgMCbDZgmTIKLt9TA7Ia8Pp/G8TQBXmy2AxfAMm/19zKkBpH3Q==",
+  "dgSpecHash": "dmUm78jW3Qvx825MdmYQKLdIVKCa2/316RjrVeQaJawvT9P7Xg1COB2WlEDhlm6iucOVw7WqhEgG00GEwWCUqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kevin\\source\\repos\\MusicLibraryWebAPI\\MusicLibraryWebAPI\\MusicLibraryWebAPI.csproj",
+  "projectFilePath": "C:\\Users\\kevin\\source\\repos\\MusicLibraryWebAPI\\MusicLibrary1WebAPI\\MusicLibraryWebAPI\\MusicLibraryWebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kevin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\kevin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
