@@ -23,7 +23,7 @@ namespace MusicLibraryWebAPI.Data
                     Title = "Modernday Cowboy",
                     Artist = "Tesla",
                     Album = "Mechanical Resonance",
-                    ReleaseDate = 1986,
+                    ReleaseDate = new DateTime(1986,1,1),
                     Genre = "Rock"
                 }
            );

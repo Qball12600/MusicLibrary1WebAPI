@@ -35,10 +35,20 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpGet]
         public IActionResult GetAllSongs()
         {
-            var songs = _context.Songs.ToList();
-            return Ok(songs);
+            try
+            {
+                var songs = _context.Songs.ToList();
+                if (songs == null )
+                {
+                    return NotFound();
+                }
+                return Ok(songs);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }
         }
-
         // GET api/<Songs>/5
         [HttpGet("{id}")]
         public IActionResult GetSongsById(int id)
@@ -53,12 +63,23 @@ namespace MusicLibraryWebAPI.Controllers
 
         // POST api/<Songs>
         [HttpPost]
-        public IActionResult CreateSong([FromBody] Song newSong)
+        public IActionResult  CreateSong([FromBody] Song newSong)
         {
-            _context.Songs.Add(newSong);
-            _context.SaveChanges();
+            if (newSong == null)
+            {
+                return BadRequest("Invalid data");
+            }
+            try
+            {
+                _context.Songs.Add(newSong);
+                _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetSongsById), new { id = newSong.Id }, newSong);
+                return StatusCode(201,newSong);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }
         }
 
         // PUT api/<Songs>/5
