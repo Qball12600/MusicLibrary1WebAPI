@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicLibraryWebAPI.Data;
 
@@ -10,9 +11,11 @@ using MusicLibraryWebAPI.Data;
 namespace MusicLibraryWebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231113185023_InitialData")]
+    partial class InitialData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,7 +59,7 @@ namespace MusicLibraryWebAPI.Migrations
                             Artist = "Tesla",
                             Genre = "Rock",
                             ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Ez Come Ez Go"
+                            Title = "Modernday Cowboy"
                         },
                         new
                         {
@@ -65,7 +68,7 @@ namespace MusicLibraryWebAPI.Migrations
                             Artist = "Tesla",
                             Genre = "Rock",
                             ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Cumin' Atcha Live"
+                            Title = "Modernday Cowboy"
                         },
                         new
                         {
@@ -74,7 +77,7 @@ namespace MusicLibraryWebAPI.Migrations
                             Artist = "Tesla",
                             Genre = "Rock",
                             ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Gettin Better"
+                            Title = "Modernday Cowboy"
                         },
                         new
                         {
@@ -83,7 +86,7 @@ namespace MusicLibraryWebAPI.Migrations
                             Artist = "Tesla",
                             Genre = "Rock",
                             ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "2 Late 4 Love"
+                            Title = "Modernday Cowboy"
                         },
                         new
                         {
@@ -92,7 +95,7 @@ namespace MusicLibraryWebAPI.Migrations
                             Artist = "Tesla",
                             Genre = "Rock",
                             ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Rock Me To The Top"
+                            Title = "Modernday Cowboy"
                         },
                         new
                         {
@@ -101,61 +104,7 @@ namespace MusicLibraryWebAPI.Migrations
                             Artist = "Tesla",
                             Genre = "Rock",
                             ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "We're No Good Together"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Album = "Mechanical Resonance",
-                            Artist = "Tesla",
-                            Genre = "Rock",
-                            ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Modern Day Cowboy"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Album = "Mechanical Resonance",
-                            Artist = "Tesla",
-                            Genre = "Rock",
-                            ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Changes"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Album = "Mechanical Resonance",
-                            Artist = "Tesla",
-                            Genre = "Rock",
-                            ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Little Suzi"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Album = "Mechanical Resonance",
-                            Artist = "Tesla",
-                            Genre = "Rock",
-                            ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Love Me"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Album = "Mechanical Resonance",
-                            Artist = "Tesla",
-                            Genre = "Rock",
-                            ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Cover Queen"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Album = "Mechanical Resonance",
-                            Artist = "Tesla",
-                            Genre = "Rock",
-                            ReleaseDate = new DateTime(1986, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Before My Eyes"
+                            Title = "Modernday Cowboy"
                         });
                 });
 #pragma warning restore 612, 618

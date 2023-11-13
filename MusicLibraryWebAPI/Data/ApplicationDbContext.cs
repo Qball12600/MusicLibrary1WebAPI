@@ -20,7 +20,7 @@ namespace MusicLibraryWebAPI.Data
                 new Song
                 {
                     Id = 1,
-                    Title = "Modernday Cowboy",
+                    Title = "Ez Come Ez Go",
                     Artist = "Tesla",
                     Album = "Mechanical Resonance",
                     ReleaseDate = new DateTime(1986,1,1),
@@ -29,7 +29,7 @@ namespace MusicLibraryWebAPI.Data
                 new Song
                 {
                     Id = 2,
-                    Title = "Modernday Cowboy",
+                    Title = "Cumin' Atcha Live",
                     Artist = "Tesla",
                     Album = "Mechanical Resonance",
                     ReleaseDate = new DateTime(1986, 1, 1),
@@ -38,7 +38,7 @@ namespace MusicLibraryWebAPI.Data
                 new Song
                 {
                     Id = 3,
-                    Title = "Modernday Cowboy",
+                    Title = "Gettin Better",
                     Artist = "Tesla",
                     Album = "Mechanical Resonance",
                     ReleaseDate = new DateTime(1986, 1, 1),
@@ -47,7 +47,7 @@ namespace MusicLibraryWebAPI.Data
                 new Song
                 {
                     Id = 4,
-                    Title = "Modernday Cowboy",
+                    Title = "2 Late 4 Love",
                     Artist = "Tesla",
                     Album = "Mechanical Resonance",
                     ReleaseDate = new DateTime(1986, 1, 1),
@@ -56,7 +56,7 @@ namespace MusicLibraryWebAPI.Data
                 new Song
                 {
                     Id = 5,
-                    Title = "Modernday Cowboy",
+                    Title = "Rock Me To The Top",
                     Artist = "Tesla",
                     Album = "Mechanical Resonance",
                     ReleaseDate = new DateTime(1986, 1, 1),
@@ -65,12 +65,67 @@ namespace MusicLibraryWebAPI.Data
                 new Song
                 {
                     Id = 6,
-                    Title = "Modernday Cowboy",
+                    Title = "We're No Good Together",
                     Artist = "Tesla",
                     Album = "Mechanical Resonance",
                     ReleaseDate = new DateTime(1986, 1, 1),
                     Genre = "Rock"
-                }
+                },
+                new Song
+                {
+                    Id = 7,
+                    Title = "Modern Day Cowboy",
+                    Artist = "Tesla",
+                    Album = "Mechanical Resonance",
+                    ReleaseDate = new DateTime(1986, 1, 1),
+                    Genre = "Rock"
+                },
+                new Song
+                {
+                    Id = 8,
+                    Title = "Changes",
+                    Artist = "Tesla",
+                    Album = "Mechanical Resonance",
+                    ReleaseDate = new DateTime(1986, 1, 1),
+                    Genre = "Rock"
+                },
+                new Song
+                {
+                    Id = 9,
+                    Title = "Little Suzi",
+                    Artist = "Tesla",
+                    Album = "Mechanical Resonance",
+                    ReleaseDate = new DateTime(1986, 1, 1),
+                    Genre = "Rock"
+                },
+                 new Song
+                 {
+                     Id = 10,
+                     Title = "Love Me",
+                     Artist = "Tesla",
+                     Album = "Mechanical Resonance",
+                     ReleaseDate = new DateTime(1986, 1, 1),
+                     Genre = "Rock"
+                 },
+                  new Song
+                  {
+                      Id = 11,
+                      Title = "Cover Queen",
+                      Artist = "Tesla",
+                      Album = "Mechanical Resonance",
+                      ReleaseDate = new DateTime(1986, 1, 1),
+                      Genre = "Rock"
+                  },
+                   new Song
+                   {
+                       Id = 12,
+                       Title = "Before My Eyes",
+                       Artist = "Tesla",
+                       Album = "Mechanical Resonance",
+                       ReleaseDate = new DateTime(1986, 1, 1),
+                       Genre = "Rock"
+                   }
+                   
            );
         
         }

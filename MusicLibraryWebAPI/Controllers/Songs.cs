@@ -35,8 +35,9 @@ namespace MusicLibraryWebAPI.Controllers
         // GET: api/<Songs>
         [HttpGet]
         public IActionResult GetAllSongs()
-        { 
-                var songs = _context.Songs.ToList();
+        {
+            
+            var songs = _context.Songs.ToList();
                 return Ok(songs);
          
             
@@ -45,6 +46,7 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpGet("{id}")]
         public IActionResult GetSongsById(int id)
         {
+            
             var song = _context.Songs.Find(id);
             if (song == null)
             
@@ -57,6 +59,7 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Song song)
         {
+            
             if (song == null)
             {
                 return BadRequest("Invalid data");
@@ -70,7 +73,7 @@ namespace MusicLibraryWebAPI.Controllers
                 _context.Songs.Add(song);
                 _context.SaveChanges();
 
-                return StatusCode(201,song);
+                return CreatedAtAction(nameof(GetSongsById), new { id = song.Id }, song);
             }
             catch (Exception ex)
             {
@@ -82,6 +85,7 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateSong(int id, [FromBody] Song updatedSong)
         {
+            
             var existingSong = _context.Songs.Find(id);
             if (existingSong == null)
             
@@ -101,6 +105,7 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteSong(int id)
         {
+       
             var song = _context.Songs.Find(id);
             if (song == null)
                 return NotFound();
