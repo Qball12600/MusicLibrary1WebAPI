@@ -25,6 +25,51 @@ namespace MusicLibraryWebAPI.Data
                     Album = "Mechanical Resonance",
                     ReleaseDate = new DateTime(1986,1,1),
                     Genre = "Rock"
+                },
+                new Song
+                {
+                    Id = 2,
+                    Title = "Modernday Cowboy",
+                    Artist = "Tesla",
+                    Album = "Mechanical Resonance",
+                    ReleaseDate = new DateTime(1986, 1, 1),
+                    Genre = "Rock"
+                }, 
+                new Song
+                {
+                    Id = 3,
+                    Title = "Modernday Cowboy",
+                    Artist = "Tesla",
+                    Album = "Mechanical Resonance",
+                    ReleaseDate = new DateTime(1986, 1, 1),
+                    Genre = "Rock"
+                },
+                new Song
+                {
+                    Id = 4,
+                    Title = "Modernday Cowboy",
+                    Artist = "Tesla",
+                    Album = "Mechanical Resonance",
+                    ReleaseDate = new DateTime(1986, 1, 1),
+                    Genre = "Rock"
+                },
+                new Song
+                {
+                    Id = 5,
+                    Title = "Modernday Cowboy",
+                    Artist = "Tesla",
+                    Album = "Mechanical Resonance",
+                    ReleaseDate = new DateTime(1986, 1, 1),
+                    Genre = "Rock"
+                },
+                new Song
+                {
+                    Id = 6,
+                    Title = "Modernday Cowboy",
+                    Artist = "Tesla",
+                    Album = "Mechanical Resonance",
+                    ReleaseDate = new DateTime(1986, 1, 1),
+                    Genre = "Rock"
                 }
            );
         

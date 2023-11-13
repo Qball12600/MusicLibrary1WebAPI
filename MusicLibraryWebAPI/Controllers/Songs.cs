@@ -6,8 +6,9 @@ using MySqlX.XDevAPI.CRUD;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 namespace MusicLibraryWebAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+  
     public class SongsController : ControllerBase
     {
         //public class MusicLibraryWebAPIController : Controller
@@ -34,20 +35,11 @@ namespace MusicLibraryWebAPI.Controllers
         // GET: api/<Songs>
         [HttpGet]
         public IActionResult GetAllSongs()
-        {
-            try
-            {
+        { 
                 var songs = _context.Songs.ToList();
-                if (songs == null )
-                {
-                    return NotFound();
-                }
                 return Ok(songs);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Internal Server Error");
-            }
+         
+            
         }
         // GET api/<Songs>/5
         [HttpGet("{id}")]
@@ -55,26 +47,30 @@ namespace MusicLibraryWebAPI.Controllers
         {
             var song = _context.Songs.Find(id);
             if (song == null)
-            {
+            
                 return NotFound();
-            }
+            
             return Ok(song);
         }
 
         // POST api/<Songs>
         [HttpPost]
-        public IActionResult  CreateSong([FromBody] Song newSong)
+        public IActionResult Post([FromBody] Song song)
         {
-            if (newSong == null)
+            if (song == null)
             {
                 return BadRequest("Invalid data");
             }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             try
             {
-                _context.Songs.Add(newSong);
+                _context.Songs.Add(song);
                 _context.SaveChanges();
 
-                return StatusCode(201,newSong);
+                return StatusCode(201,song);
             }
             catch (Exception ex)
             {
@@ -86,19 +82,19 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateSong(int id, [FromBody] Song updatedSong)
         {
-            var song = _context.Songs.Find(id);
-            if (song == null)
-            {
+            var existingSong = _context.Songs.Find(id);
+            if (existingSong == null)
+            
                 return NotFound();
-            }
-            song.Title = updatedSong.Title;
-            song.Artist = updatedSong.Artist;
-            song.Album = updatedSong.Album;
-            song.ReleaseDate = updatedSong.ReleaseDate;
-            song.Genre = updatedSong.Genre;
+            
+            existingSong.Title = updatedSong.Title;
+            existingSong.Artist = updatedSong.Artist;
+            existingSong.Album = updatedSong.Album;
+            existingSong.ReleaseDate = updatedSong.ReleaseDate;
+            existingSong.Genre = updatedSong.Genre;
 
             _context.SaveChanges();
-            return Ok(song);
+            return Ok(existingSong);
         }
 
         // DELETE api/<Songs>/5
@@ -107,9 +103,8 @@ namespace MusicLibraryWebAPI.Controllers
         {
             var song = _context.Songs.Find(id);
             if (song == null)
-            {
                 return NotFound();
-            }
+            
             _context.Songs.Remove(song);
             _context.SaveChanges();
             return NoContent();
